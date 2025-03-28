@@ -141,6 +141,10 @@ span{
     font-weight: 700;
 }
 
+.home-content p{
+    font-size: 1.7rem;
+}
+
 .home-img{
 border-radius: 50%;
 }
@@ -171,6 +175,7 @@ border-radius: 50%;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3rem ease;
+    color: rgb(5, 5, 5);
 }
 
 .social-icons a:hover{
@@ -180,6 +185,54 @@ border-radius: 50%;
     box-shadow: 0 0 25px solid rgb(43, 255, 0);
 }
 
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: rgb(43, 255, 0);
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: solid rgb(43, 255, 0);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.3);
+    background-color: rgb(43, 255, 0);
+    color: #000000;
+    box-shadow: 0 0 25px rgb(43, 255, 0);
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: 'Softerware developer';
+    color: rgb(43, 255, 0);
+    animation:words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: #575656;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid rgb(0, 0, 0);
+    right: -8;
+    animation: cursor 0.6s infinite;
+
+}
 /* =============================== */
 /* 10. Estilos Combinados (combinaciones de selectores) */
 /* =============================== */
@@ -191,7 +244,8 @@ border-radius: 50%;
 @media(max-width:995px){
     nav{
         position: absolute;
-        top: 100%;
+        display: none;
+        top: 0;
         right: 0;
         width: 40%;
         border-left: 3px solid rgb(43, 255, 0);
@@ -217,6 +271,57 @@ border-radius: 50%;
         border-bottom: 0.5rem solid rgb(43, 255, 0);
     }
     
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid rgb(43, 255, 0);
+    }
+    
+}
+
+@keyframes words{
+    0%, 20%{
+        content: 'Web developer';
+    }
+    21%, 40%{
+        content: 'Software developer';
+    }
+    41%, 60%{
+        content: 'Web designer';
+    }
+    61%, 80%{
+        content: 'Dribble designer';
+    }
+    81%, 100%{
+        content: 'UX/UI designer';
+    }
+}
+
+@media(max-width: 1000px){
+   .home{
+    gap: 4rem;
+   } 
+}
+
+@media(max-width: 995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+    
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 40vw;
+        margin-top: 4rem;
+    }
 }
 
 
